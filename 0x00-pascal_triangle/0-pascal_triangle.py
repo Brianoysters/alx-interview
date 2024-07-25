@@ -8,14 +8,14 @@ def pascal_triangle(n):
     if n <= 0:
         return []
 
-    res = []
+    tri = []
     for i in range(1, n + 1):
-        level = []
-        C = 1
+        row = []
+        init_1 = 1
         for j in range(1, i + 1):
-            level.append(C)
-            C = C * (i - j) // j
-        res.append(level)
+            row.append(init_1)
+            init_1 = init_1 * (i - j) // j
+        tri.append(row)
     
-    return res
+    return tri
 
