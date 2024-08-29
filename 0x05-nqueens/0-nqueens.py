@@ -2,7 +2,9 @@
 import sys
 
 def validate_args():
-    """Validates the command-line arguments."""
+    '''
+    Validates the command-line arguments
+    '''
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
@@ -17,7 +19,9 @@ def validate_args():
     return N
 
 def is_safe(board, row, col):
-    """Checks if it's safe to place a queen at board[row][col]."""
+    '''
+    Checks safe places for queen
+    '''
     for i in range(row):
         if board[i] == col or \
            board[i] - i == col - row or \
@@ -26,7 +30,9 @@ def is_safe(board, row, col):
     return True
 
 def solve_nqueens(N):
-    """Solves the N Queens problem using backtracking."""
+    '''
+    Solves the N Queens problem using backtracking
+    '''
     def backtrack(row, board):
         if row == N:
             result.append(board[:])
@@ -43,7 +49,9 @@ def solve_nqueens(N):
     return result
 
 def print_solutions(solutions):
-    """Prints all solutions in the required format."""
+    '''
+    Outputs all solutions in the required format.
+    '''
     for solution in solutions:
         formatted_solution = [[i, solution[i]] for i in range(len(solution))]
         print(formatted_solution)
