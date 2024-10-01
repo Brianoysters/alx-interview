@@ -1,8 +1,18 @@
 #!/usr/bin/python3
 
+"""
+Prime Game module.
+"""
+
 def eratosthenes_sieves(n):
     """
-    Generates a list of primes up to n using the Sieve of Eratosthenes
+    Generates a list of prime numbers up to n using the Sieve of Eratosthenes.
+
+    Args:
+        upper limit for generating prime numbers.
+
+    Returns:
+        list of prime numbers up to n.
     """
     sieve = [True] * (n + 1)
     sieve[0] = sieve[1] = False
@@ -15,7 +25,13 @@ def eratosthenes_sieves(n):
 
 def isWinner(x, nums):
     """
-    Determines the winner after x rounds of prime game
+    Determines the winner after x rounds of the Prime Game.
+
+    Args:
+        x (int): The number of rounds.
+
+    Returns:
+        str: The name of the player that won else return None.
     """
     if not nums or x < 1:
         return None
